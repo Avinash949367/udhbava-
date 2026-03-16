@@ -1,0 +1,2162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Udhbhava Hospital | Trusted Healthcare in Banashankari</title>
+  <meta name="description"
+    content="Udhbhava Hospital — Private Multispeciality Hospital, 24/7 Emergency Care in Banashankari, Bengaluru.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=DM+Sans:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+
+  <style>
+    /* ─── CSS VARIABLES ─────────────────────────────── */
+    :root {
+      --blue-deep: #0a2540;
+      --blue-mid: #1a5276;
+      --blue-bright: #1e88e5;
+      --blue-light: #e8f4fd;
+      --teal: #00acc1;
+      --white: #ffffff;
+      --off-white: #f7fbff;
+      --text-dark: #0d1f35;
+      --text-mid: #3d5166;
+      --text-light: #7a93aa;
+      --gold: #c9a84c;
+      --glass-bg: rgba(255, 255, 255, 0.08);
+      --glass-border: rgba(255, 255, 255, 0.18);
+      --shadow-sm: 0 4px 24px rgba(10, 37, 64, 0.08);
+      --shadow-md: 0 8px 40px rgba(10, 37, 64, 0.12);
+      --shadow-lg: 0 20px 60px rgba(10, 37, 64, 0.18);
+      --radius: 16px;
+      --radius-lg: 28px;
+      --font-display: 'Cormorant Garamond', serif;
+      --font-body: 'DM Sans', sans-serif;
+    }
+
+    /* ─── RESET & BASE ──────────────────────────────── */
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--font-body);
+      color: var(--text-dark);
+      background: var(--white);
+      overflow-x: hidden;
+    }
+
+    ::selection {
+      background: var(--blue-bright);
+      color: #fff;
+    }
+
+    /* ─── SCROLLBAR ─────────────────────────────────── */
+    ::-webkit-scrollbar {
+      width: 5px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: var(--blue-light);
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: var(--blue-bright);
+      border-radius: 10px;
+    }
+
+    /* ─── NAVBAR ────────────────────────────────────── */
+    #mainNav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 999;
+      padding: 0 0;
+      transition: all .4s cubic-bezier(.4, 0, .2, 1);
+    }
+
+    #mainNav.scrolled {
+      background: rgba(10, 37, 64, 0.96);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      padding: 0;
+      box-shadow: 0 2px 30px rgba(0, 0, 0, .25);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 22px 40px;
+      transition: padding .4s ease;
+    }
+
+    #mainNav.scrolled .nav-inner {
+      padding: 14px 40px;
+    }
+
+    .nav-brand {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.1;
+      text-decoration: none;
+    }
+
+    .nav-brand .brand-en {
+      font-family: var(--font-display);
+      font-size: 1.55rem;
+      font-weight: 500;
+      color: #fff;
+      letter-spacing: .02em;
+    }
+
+    .nav-brand .brand-kn {
+      font-size: .72rem;
+      color: rgba(255, 255, 255, .55);
+      letter-spacing: .06em;
+      font-weight: 300;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: rgba(255, 255, 255, .78);
+      text-decoration: none;
+      font-size: .82rem;
+      font-weight: 500;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      padding: 8px 14px;
+      border-radius: 50px;
+      transition: all .25s ease;
+    }
+
+    .nav-links a:hover {
+      color: #fff;
+      background: rgba(255, 255, 255, .1);
+    }
+
+    .nav-cta {
+      background: linear-gradient(135deg, #e53935, #c62828) !important;
+      color: #fff !important;
+      padding: 8px 20px !important;
+      border-radius: 50px !important;
+      box-shadow: 0 4px 16px rgba(229, 57, 53, .4);
+    }
+
+    .nav-cta:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 6px 22px rgba(229, 57, 53, .5) !important;
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+    }
+
+    .hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: #fff;
+      border-radius: 2px;
+      transition: all .3s ease;
+    }
+
+    .mobile-menu {
+      display: none;
+      background: rgba(10, 37, 64, .97);
+      padding: 16px 24px 24px;
+    }
+
+    .mobile-menu a {
+      display: block;
+      color: rgba(255, 255, 255, .8);
+      text-decoration: none;
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, .08);
+      font-size: .9rem;
+      font-weight: 500;
+      transition: color .2s;
+    }
+
+    .mobile-menu a:last-child {
+      border-bottom: none;
+    }
+
+    .mobile-menu a:hover {
+      color: var(--blue-bright);
+    }
+
+    /* ─── HERO ──────────────────────────────────────── */
+    #hero {
+      position: relative;
+      height: 100vh;
+      min-height: 680px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .hero-video-wrap {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      background: linear-gradient(160deg, #0a2540 0%, #0d3b6e 40%, #0a2540 100%);
+    }
+
+    /* Animated background pattern instead of video for performance */
+    .hero-bg-pattern {
+      position: absolute;
+      inset: 0;
+      background-image:
+        radial-gradient(circle at 20% 50%, rgba(30, 136, 229, .18) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(0, 172, 193, .12) 0%, transparent 40%),
+        radial-gradient(circle at 60% 80%, rgba(26, 82, 118, .2) 0%, transparent 40%);
+      animation: bgPulse 8s ease-in-out infinite alternate;
+    }
+
+    @keyframes bgPulse {
+      from {
+        opacity: .7;
+        transform: scale(1);
+      }
+
+      to {
+        opacity: 1;
+        transform: scale(1.04);
+      }
+    }
+
+    .hero-grid-overlay {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255, 255, 255, .03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, .03) 1px, transparent 1px);
+      background-size: 60px 60px;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, rgba(10, 37, 64, .55) 0%, rgba(10, 37, 64, .3) 50%, rgba(10, 37, 64, .8) 100%);
+      z-index: 1;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      padding: 0 24px;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255, 255, 255, .1);
+      border: 1px solid rgba(255, 255, 255, .2);
+      border-radius: 50px;
+      padding: 6px 20px;
+      color: rgba(255, 255, 255, .85);
+      font-size: .78rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      margin-bottom: 28px;
+      backdrop-filter: blur(10px);
+      animation: fadeInDown .8s ease both;
+    }
+
+    .hero-badge i {
+      color: var(--teal);
+      font-size: .7rem;
+    }
+
+    .hero-title-kn {
+      font-family: var(--font-display);
+      font-size: clamp(1.1rem, 3vw, 1.6rem);
+      color: rgba(255, 255, 255, .6);
+      letter-spacing: .12em;
+      font-weight: 300;
+      margin-bottom: 10px;
+      animation: fadeInDown .9s ease .1s both;
+    }
+
+    .hero-title {
+      font-family: var(--font-display);
+      font-size: clamp(3rem, 9vw, 7rem);
+      font-weight: 400;
+      color: #fff;
+      line-height: 1.0;
+      letter-spacing: -.01em;
+      margin-bottom: 20px;
+      animation: fadeInDown 1s ease .2s both;
+    }
+
+    .hero-title span {
+      color: var(--teal);
+    }
+
+    .hero-tagline {
+      font-size: clamp(.95rem, 2.5vw, 1.2rem);
+      color: rgba(255, 255, 255, .72);
+      font-weight: 300;
+      letter-spacing: .04em;
+      margin-bottom: 44px;
+      animation: fadeInDown 1s ease .3s both;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+      animation: fadeInUp 1s ease .5s both;
+    }
+
+    .btn-emergency {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: linear-gradient(135deg, #e53935, #c62828);
+      color: #fff;
+      text-decoration: none;
+      padding: 15px 32px;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: .95rem;
+      letter-spacing: .03em;
+      box-shadow: 0 8px 30px rgba(229, 57, 53, .5);
+      transition: all .3s ease;
+      animation: pulse-red 2.5s infinite;
+    }
+
+    .btn-emergency:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 40px rgba(229, 57, 53, .6);
+      color: #fff;
+    }
+
+    @keyframes pulse-red {
+
+      0%,
+      100% {
+        box-shadow: 0 8px 30px rgba(229, 57, 53, .5);
+      }
+
+      50% {
+        box-shadow: 0 8px 50px rgba(229, 57, 53, .8);
+      }
+    }
+
+    .btn-outline-hero {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(255, 255, 255, .08);
+      border: 1px solid rgba(255, 255, 255, .3);
+      color: #fff;
+      text-decoration: none;
+      padding: 15px 32px;
+      border-radius: 50px;
+      font-weight: 500;
+      font-size: .95rem;
+      backdrop-filter: blur(10px);
+      transition: all .3s ease;
+    }
+
+    .btn-outline-hero:hover {
+      background: rgba(255, 255, 255, .18);
+      color: #fff;
+      transform: translateY(-3px);
+    }
+
+    /* floating stats chips */
+    .hero-stats {
+      margin-top: 48px;
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+      z-index: 2;
+      animation: fadeInUp 1s ease .8s both;
+    }
+
+    .stat-chip {
+      background: rgba(255, 255, 255, .1);
+      border: 1px solid rgba(255, 255, 255, .18);
+      backdrop-filter: blur(12px);
+      border-radius: 50px;
+      padding: 10px 22px;
+      color: #fff;
+      font-size: .82rem;
+      font-weight: 500;
+      white-space: nowrap;
+    }
+
+    .stat-chip strong {
+      color: var(--teal);
+    }
+
+    /* scroll indicator */
+    .scroll-indicator {
+      position: absolute;
+      bottom: 28px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      color: rgba(255, 255, 255, .4);
+      font-size: .7rem;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      animation: fadeIn 1s ease 1.5s both;
+    }
+
+    .scroll-dot {
+      width: 1.5px;
+      height: 40px;
+      background: linear-gradient(to bottom, rgba(255, 255, 255, .6), transparent);
+      animation: scrollLine 2s ease-in-out infinite;
+    }
+
+    @keyframes scrollLine {
+      0% {
+        transform: scaleY(0) translateY(-50%);
+        transform-origin: top;
+      }
+
+      50% {
+        transform: scaleY(1) translateY(0);
+        transform-origin: top;
+      }
+
+      100% {
+        transform: scaleY(0) translateY(50%);
+        transform-origin: bottom;
+      }
+    }
+
+    /* ─── SECTION BASE ──────────────────────────────── */
+    section {
+      padding: 96px 0;
+    }
+
+    .section-label {
+      font-size: .72rem;
+      font-weight: 600;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--blue-bright);
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 400;
+      line-height: 1.12;
+      color: var(--blue-deep);
+    }
+
+    .section-title em {
+      color: var(--blue-bright);
+      font-style: italic;
+    }
+
+    .section-desc {
+      font-size: 1rem;
+      color: var(--text-mid);
+      line-height: 1.75;
+      font-weight: 300;
+      max-width: 560px;
+    }
+
+    .divider-line {
+      width: 48px;
+      height: 3px;
+      background: linear-gradient(90deg, var(--blue-bright), var(--teal));
+      border-radius: 3px;
+      margin: 20px 0;
+    }
+
+    /* ─── ABOUT ─────────────────────────────────────── */
+    #about {
+      background: var(--off-white);
+    }
+
+    .about-visual {
+      position: relative;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      aspect-ratio: 4/3;
+      background: linear-gradient(135deg, var(--blue-deep), var(--blue-mid));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .about-visual-inner {
+      text-align: center;
+      color: rgba(255, 255, 255, .7);
+    }
+
+    .about-visual-inner i {
+      font-size: 5rem;
+      margin-bottom: 16px;
+      color: rgba(255, 255, 255, .3);
+    }
+
+    .about-visual-inner p {
+      font-size: .85rem;
+    }
+
+    .about-badge-float {
+      position: absolute;
+      bottom: 24px;
+      right: 24px;
+      background: rgba(255, 255, 255, .12);
+      border: 1px solid rgba(255, 255, 255, .2);
+      backdrop-filter: blur(12px);
+      border-radius: 14px;
+      padding: 14px 20px;
+      color: #fff;
+      text-align: center;
+      min-width: 120px;
+    }
+
+    .about-badge-float .num {
+      font-family: var(--font-display);
+      font-size: 2.2rem;
+      font-weight: 500;
+      line-height: 1;
+      color: var(--teal);
+    }
+
+    .about-badge-float .lbl {
+      font-size: .72rem;
+      opacity: .7;
+    }
+
+    .about-stat-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 36px;
+    }
+
+    .about-stat {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 20px 16px;
+      text-align: center;
+      box-shadow: var(--shadow-sm);
+      transition: transform .3s ease, box-shadow .3s ease;
+    }
+
+    .about-stat:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .about-stat .icon {
+      font-size: 1.4rem;
+      color: var(--blue-bright);
+      margin-bottom: 8px;
+    }
+
+    .about-stat .val {
+      font-family: var(--font-display);
+      font-size: 1.7rem;
+      font-weight: 500;
+      color: var(--blue-deep);
+      line-height: 1;
+    }
+
+    .about-stat .lbl {
+      font-size: .7rem;
+      color: var(--text-light);
+      margin-top: 4px;
+    }
+
+    /* ─── SERVICES ──────────────────────────────────── */
+    #services {
+      background: var(--white);
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 22px;
+    }
+
+    .svc-card {
+      background: var(--white);
+      border: 1px solid #e4eef8;
+      border-radius: var(--radius);
+      padding: 32px 24px;
+      text-align: center;
+      cursor: default;
+      transition: all .35s cubic-bezier(.4, 0, .2, 1);
+      box-shadow: var(--shadow-sm);
+      transform-style: preserve-3d;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .svc-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, var(--blue-bright), var(--teal));
+      opacity: 0;
+      transition: opacity .35s ease;
+      z-index: 0;
+    }
+
+    .svc-card:hover {
+      transform: translateY(-8px) rotateX(4deg) rotateY(-2deg);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .svc-card:hover::before {
+      opacity: 1;
+    }
+
+    .svc-icon {
+      width: 64px;
+      height: 64px;
+      background: var(--blue-light);
+      border-radius: 18px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      color: var(--blue-bright);
+      margin-bottom: 18px;
+      position: relative;
+      z-index: 1;
+      transition: all .35s ease;
+    }
+
+    .svc-card:hover .svc-icon {
+      background: rgba(255, 255, 255, .2);
+      color: #fff;
+    }
+
+    .svc-name {
+      font-weight: 600;
+      font-size: .9rem;
+      color: var(--text-dark);
+      position: relative;
+      z-index: 1;
+      transition: color .35s ease;
+    }
+
+    .svc-card:hover .svc-name {
+      color: #fff;
+    }
+
+    .svc-desc {
+      font-size: .78rem;
+      color: var(--text-light);
+      margin-top: 6px;
+      line-height: 1.5;
+      position: relative;
+      z-index: 1;
+      transition: color .35s ease;
+    }
+
+    .svc-card:hover .svc-desc {
+      color: rgba(255, 255, 255, .75);
+    }
+
+    /* ─── DOCTORS ───────────────────────────────────── */
+    #doctors {
+      background: var(--blue-deep);
+    }
+
+    #doctors .section-label {
+      color: var(--teal);
+    }
+
+    #doctors .section-title {
+      color: #fff;
+    }
+
+    #doctors .section-desc {
+      color: rgba(255, 255, 255, .55);
+    }
+
+    #doctors .divider-line {
+      background: linear-gradient(90deg, var(--teal), rgba(255, 255, 255, .2));
+    }
+
+    .doctor-card {
+      background: rgba(255, 255, 255, .07);
+      border: 1px solid rgba(255, 255, 255, .12);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      backdrop-filter: blur(10px);
+      transition: all .35s ease;
+      max-width: 420px;
+    }
+
+    .doctor-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 24px 60px rgba(0, 0, 0, .4);
+    }
+
+    .doctor-photo {
+      background: linear-gradient(135deg, #0d3b6e 0%, var(--blue-mid) 100%);
+      height: 280px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .doctor-photo-inner {
+      text-align: center;
+      color: rgba(255, 255, 255, .35);
+    }
+
+    .doctor-photo-inner i {
+      font-size: 6rem;
+    }
+
+    .doctor-photo-badge {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: linear-gradient(135deg, var(--teal), #00838f);
+      color: #fff;
+      border-radius: 50px;
+      padding: 5px 14px;
+      font-size: .72rem;
+      font-weight: 600;
+      letter-spacing: .08em;
+    }
+
+    .doctor-info {
+      padding: 28px 32px;
+    }
+
+    .doctor-info .name {
+      font-family: var(--font-display);
+      font-size: 1.9rem;
+      font-weight: 400;
+      color: #fff;
+    }
+
+    .doctor-info .spec {
+      font-size: .82rem;
+      color: var(--teal);
+      font-weight: 500;
+      letter-spacing: .06em;
+      margin-top: 4px;
+      text-transform: uppercase;
+    }
+
+    .doctor-info .bio {
+      font-size: .88rem;
+      color: rgba(255, 255, 255, .55);
+      line-height: 1.7;
+      margin-top: 16px;
+    }
+
+    .doctor-tags {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 18px;
+    }
+
+    .dtag {
+      background: rgba(255, 255, 255, .08);
+      border: 1px solid rgba(255, 255, 255, .12);
+      color: rgba(255, 255, 255, .7);
+      border-radius: 50px;
+      padding: 4px 14px;
+      font-size: .72rem;
+    }
+
+    .doc-why {
+      background: rgba(255, 255, 255, .04);
+      border: 1px solid rgba(255, 255, 255, .08);
+      border-radius: var(--radius);
+      padding: 32px;
+      height: 100%;
+    }
+
+    .doc-why h4 {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      color: #fff;
+      font-weight: 400;
+      margin-bottom: 24px;
+    }
+
+    .doc-feat {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      margin-bottom: 22px;
+    }
+
+    .doc-feat-icon {
+      width: 40px;
+      height: 40px;
+      min-width: 40px;
+      background: rgba(0, 172, 193, .15);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--teal);
+      font-size: 1rem;
+    }
+
+    .doc-feat-text .title {
+      font-size: .88rem;
+      color: #fff;
+      font-weight: 500;
+    }
+
+    .doc-feat-text .sub {
+      font-size: .78rem;
+      color: rgba(255, 255, 255, .45);
+      margin-top: 2px;
+    }
+
+    /* ─── FACILITIES ────────────────────────────────── */
+    #facilities {
+      background: var(--off-white);
+    }
+
+    .facilities-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      gap: 20px;
+    }
+
+    .fac-item {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 28px 16px;
+      text-align: center;
+      box-shadow: var(--shadow-sm);
+      transition: all .3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .fac-item::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--blue-bright), var(--teal));
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform .3s ease;
+    }
+
+    .fac-item:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .fac-item:hover::after {
+      transform: scaleX(1);
+    }
+
+    .fac-icon {
+      font-size: 2rem;
+      color: var(--blue-bright);
+      margin-bottom: 12px;
+      display: block;
+    }
+
+    .fac-name {
+      font-size: .82rem;
+      font-weight: 600;
+      color: var(--text-dark);
+    }
+
+    .fac-tag {
+      font-size: .68rem;
+      color: var(--text-light);
+      margin-top: 4px;
+    }
+
+    /* ─── REVIEWS ───────────────────────────────────── */
+    #reviews {
+      background: var(--white);
+    }
+
+    .rating-bar-wrap {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-bottom: 52px;
+    }
+
+    .rating-card {
+      background: linear-gradient(135deg, var(--blue-deep), var(--blue-mid));
+      border-radius: var(--radius);
+      padding: 28px 24px;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .rating-num {
+      font-family: var(--font-display);
+      font-size: 3.5rem;
+      font-weight: 300;
+      line-height: 1;
+      color: #fff;
+    }
+
+    .rating-num sub {
+      font-size: 1.1rem;
+      color: rgba(255, 255, 255, .5);
+    }
+
+    .rating-meta .source {
+      font-size: .72rem;
+      letter-spacing: .12em;
+      color: rgba(255, 255, 255, .5);
+      text-transform: uppercase;
+    }
+
+    .rating-meta .stars {
+      color: #ffd54f;
+      font-size: .9rem;
+      margin: 4px 0;
+    }
+
+    .rating-meta .count {
+      font-size: .75rem;
+      color: rgba(255, 255, 255, .4);
+    }
+
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 22px;
+    }
+
+    .review-card {
+      background: var(--off-white);
+      border-radius: var(--radius);
+      padding: 28px;
+      transition: all .3s ease;
+      border: 1px solid #e8f0f8;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .review-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .review-quote {
+      font-size: 2rem;
+      color: var(--blue-light);
+      line-height: 0;
+      margin-bottom: 16px;
+    }
+
+    .review-text {
+      font-size: .88rem;
+      color: var(--text-mid);
+      line-height: 1.7;
+      font-style: italic;
+    }
+
+    .review-author {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .review-avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--blue-bright), var(--teal));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-weight: 600;
+      font-size: .9rem;
+    }
+
+    .review-author-info .name {
+      font-size: .85rem;
+      font-weight: 600;
+      color: var(--text-dark);
+    }
+
+    .review-author-info .stars {
+      color: #ffd54f;
+      font-size: .7rem;
+      margin-top: 2px;
+    }
+
+    /* ─── CONTACT ───────────────────────────────────── */
+    #contact {
+      background: var(--blue-deep);
+    }
+
+    #contact .section-label {
+      color: var(--teal);
+    }
+
+    #contact .section-title {
+      color: #fff;
+    }
+
+    #contact .divider-line {
+      background: linear-gradient(90deg, var(--teal), rgba(255, 255, 255, .15));
+    }
+
+    .contact-info-card {
+      background: rgba(255, 255, 255, .06);
+      border: 1px solid rgba(255, 255, 255, .1);
+      border-radius: var(--radius);
+      padding: 28px;
+      margin-bottom: 16px;
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      transition: all .3s ease;
+    }
+
+    .contact-info-card:hover {
+      background: rgba(255, 255, 255, .1);
+    }
+
+    .ci-icon {
+      width: 44px;
+      height: 44px;
+      min-width: 44px;
+      background: rgba(0, 172, 193, .15);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      color: var(--teal);
+    }
+
+    .ci-label {
+      font-size: .72rem;
+      color: rgba(255, 255, 255, .4);
+      text-transform: uppercase;
+      letter-spacing: .1em;
+    }
+
+    .ci-value {
+      font-size: .92rem;
+      color: rgba(255, 255, 255, .85);
+      margin-top: 3px;
+      line-height: 1.5;
+    }
+
+    .ci-value a {
+      color: var(--teal);
+      text-decoration: none;
+    }
+
+    .ci-value a:hover {
+      color: #fff;
+    }
+
+    .map-wrap {
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, .1);
+      margin-bottom: 16px;
+    }
+
+    .contact-form {
+      background: rgba(255, 255, 255, .06);
+      border: 1px solid rgba(255, 255, 255, .1);
+      border-radius: var(--radius);
+      padding: 36px;
+    }
+
+    .contact-form h4 {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      color: #fff;
+      font-weight: 400;
+      margin-bottom: 24px;
+    }
+
+    .form-ctrl {
+      background: rgba(255, 255, 255, .06) !important;
+      border: 1px solid rgba(255, 255, 255, .12) !important;
+      color: #fff !important;
+      border-radius: 10px !important;
+      padding: 12px 16px !important;
+      font-family: var(--font-body) !important;
+      font-size: .88rem !important;
+      transition: border-color .25s ease, background .25s ease !important;
+    }
+
+    .form-ctrl::placeholder {
+      color: rgba(255, 255, 255, .3) !important;
+    }
+
+    .form-ctrl:focus {
+      outline: none !important;
+      box-shadow: 0 0 0 3px rgba(0, 172, 193, .2) !important;
+      border-color: var(--teal) !important;
+      background: rgba(255, 255, 255, .1) !important;
+    }
+
+    .form-label-custom {
+      font-size: .78rem;
+      color: rgba(255, 255, 255, .5);
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+      display: block;
+    }
+
+    .btn-submit {
+      background: linear-gradient(135deg, var(--teal), #00838f);
+      color: #fff;
+      border: none;
+      border-radius: 50px;
+      padding: 13px 36px;
+      font-size: .9rem;
+      font-weight: 600;
+      letter-spacing: .04em;
+      cursor: pointer;
+      transition: all .3s ease;
+      width: 100%;
+      box-shadow: 0 6px 24px rgba(0, 172, 193, .35);
+    }
+
+    .btn-submit:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 32px rgba(0, 172, 193, .5);
+    }
+
+    .form-success {
+      display: none;
+      text-align: center;
+      padding: 20px;
+      color: var(--teal);
+      font-size: .95rem;
+    }
+
+    /* ─── FOOTER ────────────────────────────────────── */
+    footer {
+      background: #060f1a;
+      padding: 60px 0 24px;
+      border-top: 1px solid rgba(255, 255, 255, .06);
+    }
+
+    .footer-brand .name {
+      font-family: var(--font-display);
+      font-size: 1.7rem;
+      color: #fff;
+      font-weight: 400;
+    }
+
+    .footer-brand .kn {
+      font-size: .78rem;
+      color: rgba(255, 255, 255, .35);
+      letter-spacing: .1em;
+    }
+
+    .footer-brand .tagline {
+      font-size: .8rem;
+      color: rgba(255, 255, 255, .35);
+      margin-top: 8px;
+      line-height: 1.5;
+      max-width: 260px;
+    }
+
+    .footer-col-title {
+      font-size: .72rem;
+      color: rgba(255, 255, 255, .35);
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+      font-weight: 600;
+    }
+
+    .footer-links {
+      list-style: none;
+    }
+
+    .footer-links li {
+      margin-bottom: 8px;
+    }
+
+    .footer-links a {
+      color: rgba(255, 255, 255, .5);
+      text-decoration: none;
+      font-size: .83rem;
+      transition: color .2s;
+    }
+
+    .footer-links a:hover {
+      color: var(--teal);
+    }
+
+    .footer-contact-item {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      margin-bottom: 12px;
+    }
+
+    .footer-contact-item i {
+      color: var(--teal);
+      font-size: .8rem;
+      margin-top: 3px;
+    }
+
+    .footer-contact-item span {
+      font-size: .82rem;
+      color: rgba(255, 255, 255, .45);
+      line-height: 1.5;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, .06);
+      margin-top: 48px;
+      padding-top: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .footer-bottom p {
+      font-size: .75rem;
+      color: rgba(255, 255, 255, .3);
+    }
+
+    .footer-badge {
+      background: rgba(0, 172, 193, .1);
+      border: 1px solid rgba(0, 172, 193, .2);
+      border-radius: 50px;
+      padding: 4px 14px;
+      font-size: .7rem;
+      color: var(--teal);
+      letter-spacing: .06em;
+    }
+
+    /* ─── ANIMATIONS ────────────────────────────────── */
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-24px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(24px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(36px);
+      transition: opacity .75s ease, transform .75s cubic-bezier(.4, 0, .2, 1);
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .reveal-left {
+      opacity: 0;
+      transform: translateX(-36px);
+      transition: opacity .75s ease, transform .75s cubic-bezier(.4, 0, .2, 1);
+    }
+
+    .reveal-left.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .reveal-right {
+      opacity: 0;
+      transform: translateX(36px);
+      transition: opacity .75s ease, transform .75s cubic-bezier(.4, 0, .2, 1);
+    }
+
+    .reveal-right.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    /* stagger */
+    .stagger>* {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity .6s ease, transform .6s ease;
+    }
+
+    .stagger.visible>* {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .stagger.visible>*:nth-child(1) {
+      transition-delay: .05s;
+    }
+
+    .stagger.visible>*:nth-child(2) {
+      transition-delay: .12s;
+    }
+
+    .stagger.visible>*:nth-child(3) {
+      transition-delay: .19s;
+    }
+
+    .stagger.visible>*:nth-child(4) {
+      transition-delay: .26s;
+    }
+
+    .stagger.visible>*:nth-child(5) {
+      transition-delay: .33s;
+    }
+
+    .stagger.visible>*:nth-child(6) {
+      transition-delay: .40s;
+    }
+
+    .stagger.visible>*:nth-child(7) {
+      transition-delay: .47s;
+    }
+
+    .stagger.visible>*:nth-child(8) {
+      transition-delay: .54s;
+    }
+
+    /* ─── BACK TO TOP ───────────────────────────────── */
+    #btt {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      z-index: 998;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--blue-bright), var(--teal));
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      box-shadow: 0 4px 20px rgba(30, 136, 229, .4);
+      opacity: 0;
+      pointer-events: none;
+      transition: all .3s ease;
+    }
+
+    #btt.show {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    #btt:hover {
+      transform: translateY(-3px) scale(1.05);
+    }
+
+    /* ─── RESPONSIVE ────────────────────────────────── */
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+
+      section {
+        padding: 72px 0;
+      }
+
+      .hero-stats {
+        gap: 12px;
+        margin-top: 32px;
+      }
+
+      .stat-chip {
+        font-size: .72rem;
+        padding: 8px 14px;
+      }
+
+      .about-stat-row {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+      }
+
+      .about-stat .val {
+        font-size: 1.3rem;
+      }
+
+      .about-stat .lbl {
+        font-size: .62rem;
+      }
+
+      .rating-bar-wrap {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .nav-inner {
+        padding: 16px 20px;
+      }
+
+      #mainNav.scrolled .nav-inner {
+        padding: 12px 20px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero-actions {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .btn-emergency,
+      .btn-outline-hero {
+        width: 100%;
+        justify-content: center;
+        max-width: 280px;
+      }
+    }
+
+    /* ─── UTILITIES ─────────────────────────────────── */
+    .text-teal {
+      color: var(--teal);
+    }
+
+    .bg-blue-light {
+      background: var(--blue-light);
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ─── NAVBAR ──────────────────────────────────── -->
+  <nav id="mainNav">
+    <div class="nav-inner">
+      <a href="#hero" class="nav-brand">
+        <span class="brand-en">Udhbhava Hospital</span>
+        <span class="brand-kn">ಉದ್ಭವ ಆಸ್ಪತ್ರೆ</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#doctors">Doctors</a></li>
+        <li><a href="#facilities">Facilities</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="tel:08026693033" class="nav-cta"><i class="fa fa-phone me-1"></i> Emergency</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#about" onclick="closeMobile()">About</a>
+      <a href="#services" onclick="closeMobile()">Services</a>
+      <a href="#doctors" onclick="closeMobile()">Doctors</a>
+      <a href="#facilities" onclick="closeMobile()">Facilities</a>
+      <a href="#reviews" onclick="closeMobile()">Reviews</a>
+      <a href="#contact" onclick="closeMobile()">Contact</a>
+      <a href="tel:08026693033" style="color:#ef5350;font-weight:700;"><i class="fa fa-phone me-2"></i>Emergency: 080
+        2669 3033</a>
+    </div>
+  </nav>
+
+  <!-- ─── HERO ────────────────────────────────────── -->
+  <section id="hero">
+    <div class="hero-video-wrap">
+      <div class="hero-bg-pattern"></div>
+      <div class="hero-grid-overlay"></div>
+    </div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <div class="hero-badge">
+        <i class="fa-solid fa-circle-check"></i>
+        Private Multispecialty Hospital &nbsp;·&nbsp; Est. Banashankari, Bengaluru
+      </div>
+      <p class="hero-title-kn">ಉದ್ಭವ ಆಸ್ಪತ್ರೆ</p>
+      <h1 class="hero-title">Udhbhava<br><span>Hospital</span></h1>
+      <p class="hero-tagline">24/7 Trusted Healthcare in Banashankari, Bengaluru</p>
+      <div class="hero-actions">
+        <a href="tel:08026693033" class="btn-emergency">
+          <i class="fa-solid fa-phone-volume"></i> Emergency: 080 2669 3033
+        </a>
+        <a href="#about" class="btn-outline-hero">
+          <i class="fa-solid fa-arrow-down"></i> Explore Hospital
+        </a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-chip"><i class="fa-solid fa-clock me-2 text-teal"></i><strong>24/7</strong> Open</div>
+        <div class="stat-chip"><i class="fa-solid fa-stethoscope me-2 text-teal"></i><strong>8+</strong> Specialties
+        </div>
+        <div class="stat-chip"><i class="fa-solid fa-ambulance me-2 text-teal"></i> Ambulance Ready</div>
+        <div class="stat-chip"><i class="fa-solid fa-flask me-2 text-teal"></i> In-House Lab</div>
+      </div>
+    </div>
+    <div class="scroll-indicator">
+      <div class="scroll-dot"></div>
+      Scroll
+    </div>
+  </section>
+
+  <!-- ─── ABOUT ───────────────────────────────────── -->
+  <section id="about">
+    <div class="container">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-5 reveal-left">
+          <div class="about-visual">
+            <div class="about-visual-inner">
+              <i class="fa-solid fa-hospital"></i>
+              <p>Udhbhava Hospital<br><small>Banashankari, Bengaluru</small></p>
+            </div>
+            <div class="about-badge-float">
+              <div class="num">24<span style="font-size:1.2rem">h</span></div>
+              <div class="lbl">Always Open</div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-7 reveal-right">
+          <div class="section-label">About Us</div>
+          <h2 class="section-title">A Legacy of <em>Compassionate</em> Care</h2>
+          <div class="divider-line"></div>
+          <p class="section-desc">
+            Udhbhava Hospital is a trusted private multispecialty hospital located in the heart of Banashankari,
+            Bengaluru. We are dedicated to providing comprehensive, patient-first healthcare across a wide spectrum of
+            medical disciplines — from obstetrics and maternity to pediatrics, general medicine, surgery, and emergency
+            care.
+          </p>
+          <p class="section-desc mt-3" style="max-width:100%;">
+            Our mission is simple: deliver world-class healthcare with warmth, precision, and accessibility. Operating
+            round the clock, 365 days a year, we ensure that expert medical help is always within reach for families in
+            Ittamadu, Banashankari and beyond.
+          </p>
+          <div class="about-stat-row stagger">
+            <div class="about-stat">
+              <div class="icon"><i class="fa-solid fa-user-doctor"></i></div>
+              <div class="val">8+</div>
+              <div class="lbl">Specialties</div>
+            </div>
+            <div class="about-stat">
+              <div class="icon"><i class="fa-solid fa-bed-pulse"></i></div>
+              <div class="val">24/7</div>
+              <div class="lbl">Emergency</div>
+            </div>
+            <div class="about-stat">
+              <div class="icon"><i class="fa-solid fa-map-pin"></i></div>
+              <div class="val">BSK</div>
+              <div class="lbl">3rd Stage</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── SERVICES ─────────────────────────────────── -->
+  <section id="services">
+    <div class="container">
+      <div class="row mb-5">
+        <div class="col-lg-6 reveal">
+          <div class="section-label">Our Services</div>
+          <h2 class="section-title">Expert Care Across <em>Every</em> Specialty</h2>
+          <div class="divider-line"></div>
+          <p class="section-desc">From routine consultations to critical care, our multidisciplinary team is equipped to
+            handle all your healthcare needs under one roof.</p>
+        </div>
+      </div>
+      <div class="services-grid stagger">
+        <div class="svc-card">
+          <div class="svc-icon"><i class="fa-solid fa-venus"></i></div>
+          <div class="svc-name">Obstetrics &amp; Gynecology</div>
+          <div class="svc-desc">Expert women's health care</div>
+        </div>
+        <div class="svc-card">
+          <div class="svc-icon"><i class="fa-solid fa-baby"></i></div>
+          <div class="svc-name">Maternity Care</div>
+          <div class="svc-desc">Safe &amp; caring birth experience</div>
+        </div>
+        <div class="svc-card">
+          <div class="svc-icon"><i class="fa-solid fa-child-reaching"></i></div>
+          <div class="svc-name">Pediatrics</div>
+          <div class="svc-desc">Specialized child health care</div>
+        </div>
+        <div class="svc-card">
+          <div class="svc-icon"><i class="fa-solid fa-stethoscope"></i></div>
+          <div class="svc-name">General Medicine</div>
+          <div class="svc-desc">Comprehensive adult care</div>
+        </div>
+        <div class="svc-card">
+          <div class="svc-icon"><i class="fa-solid fa-scalpel"></i></div>
+          <div class="svc-name">Basic Surgery</div>
+          <div class="svc-desc">Surgical procedures &amp; care</div>
+        </div>
+        <div class="svc-card">
+          <div class="svc-icon"><i class="fa-solid fa-truck-medical"></i></div>
+          <div class="svc-name">Emergency Care</div>
+          <div class="svc-desc">Rapid 24/7 emergency response</div>
+        </div>
+        <div class="svc-card">
+          <div class="svc-icon"><i class="fa-solid fa-flask-vial"></i></div>
+          <div class="svc-name">Lab &amp; Diagnostics</div>
+          <div class="svc-desc">Accurate in-house testing</div>
+        </div>
+        <div class="svc-card">
+          <div class="svc-icon"><i class="fa-solid fa-ambulance"></i></div>
+          <div class="svc-name">Ambulance Service</div>
+          <div class="svc-desc">Swift patient transport</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── DOCTORS ──────────────────────────────────── -->
+  <section id="doctors">
+    <div class="container">
+      <div class="row mb-5">
+        <div class="col-lg-6 reveal">
+          <div class="section-label">Our Doctor</div>
+          <h2 class="section-title">Meet Our <em>Lead Specialist</em></h2>
+          <div class="divider-line"></div>
+          <p class="section-desc">Experienced, compassionate, and dedicated to the highest standards of women's and
+            family health.</p>
+        </div>
+      </div>
+      <div class="row g-4 align-items-stretch">
+        <div class="col-md-5 reveal-left">
+          <div class="doctor-card h-100">
+            <div class="doctor-photo">
+              <div class="doctor-photo-inner">
+                <i class="fa-solid fa-user-nurse"></i>
+                <p style="font-size:.78rem;margin-top:10px;">Dr. Hema Latha</p>
+              </div>
+              <span class="doctor-photo-badge">Specialist</span>
+            </div>
+            <div class="doctor-info">
+              <div class="name">Dr. Hema Latha</div>
+              <div class="spec">Obstetrics &amp; Gynecology</div>
+              <p class="bio">Dr. Hema Latha is the lead specialist at Udhbhava Hospital, bringing years of expertise in
+                women's health, high-risk pregnancy management, and comprehensive gynecological care.</p>
+              <div class="doctor-tags">
+                <span class="dtag">High-Risk Pregnancy</span>
+                <span class="dtag">Laparoscopy</span>
+                <span class="dtag">Maternal Care</span>
+                <span class="dtag">Gynecology</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-7 reveal-right">
+          <div class="doc-why">
+            <h4>Why Choose Udhbhava Hospital?</h4>
+            <div class="doc-feat">
+              <div class="doc-feat-icon"><i class="fa-solid fa-shield-heart"></i></div>
+              <div class="doc-feat-text">
+                <div class="title">Patient-First Approach</div>
+                <div class="sub">Every decision prioritizes your safety, dignity, and comfort</div>
+              </div>
+            </div>
+            <div class="doc-feat">
+              <div class="doc-feat-icon"><i class="fa-solid fa-clock-rotate-left"></i></div>
+              <div class="doc-feat-text">
+                <div class="title">Round-the-Clock Availability</div>
+                <div class="sub">Emergency care and consultations available 24 hours, 7 days a week</div>
+              </div>
+            </div>
+            <div class="doc-feat">
+              <div class="doc-feat-icon"><i class="fa-solid fa-microscope"></i></div>
+              <div class="doc-feat-text">
+                <div class="title">In-House Diagnostics</div>
+                <div class="sub">Blood tests, X-Ray, Scans — all under one roof for faster results</div>
+              </div>
+            </div>
+            <div class="doc-feat">
+              <div class="doc-feat-icon"><i class="fa-solid fa-location-dot"></i></div>
+              <div class="doc-feat-text">
+                <div class="title">Conveniently Located</div>
+                <div class="sub">On 100 Feet Ring Road, Ittamadu — easily accessible in Banashankari</div>
+              </div>
+            </div>
+            <div class="doc-feat">
+              <div class="doc-feat-icon"><i class="fa-solid fa-pills"></i></div>
+              <div class="doc-feat-text">
+                <div class="title">In-House Pharmacy</div>
+                <div class="sub">Medications available immediately after consultation</div>
+              </div>
+            </div>
+            <div style="margin-top:28px; display:flex; gap:12px; flex-wrap:wrap;">
+              <a href="tel:08026693033"
+                style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,var(--teal),#00838f);color:#fff;text-decoration:none;padding:12px 24px;border-radius:50px;font-size:.85rem;font-weight:600;box-shadow:0 4px 20px rgba(0,172,193,.3);transition:all .3s ease;"
+                onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform=''">
+                <i class="fa-solid fa-phone"></i> Book Appointment
+              </a>
+              <a href="#contact"
+                style="display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2);color:rgba(255,255,255,.8);text-decoration:none;padding:12px 24px;border-radius:50px;font-size:.85rem;font-weight:500;transition:all .3s ease;"
+                onmouseover="this.style.background='rgba(255,255,255,.15)';this.style.color='#fff'"
+                onmouseout="this.style.background='rgba(255,255,255,.08)';this.style.color='rgba(255,255,255,.8)'">
+                <i class="fa-solid fa-envelope"></i> Send Enquiry
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── FACILITIES ────────────────────────────────── -->
+  <section id="facilities">
+    <div class="container">
+      <div class="row mb-5">
+        <div class="col-lg-6 reveal">
+          <div class="section-label">Our Facilities</div>
+          <h2 class="section-title">Everything You Need, <em>In One Place</em></h2>
+          <div class="divider-line"></div>
+          <p class="section-desc">Udhbhava Hospital offers a complete suite of medical facilities ensuring comprehensive
+            care without the need to travel elsewhere.</p>
+        </div>
+      </div>
+      <div class="facilities-grid stagger">
+        <div class="fac-item">
+          <i class="fa-solid fa-truck-medical fac-icon"></i>
+          <div class="fac-name">24/7 Emergency</div>
+          <div class="fac-tag">Always Ready</div>
+        </div>
+        <div class="fac-item">
+          <i class="fa-solid fa-bed-pulse fac-icon"></i>
+          <div class="fac-name">Inpatient Care</div>
+          <div class="fac-tag">Comfortable Wards</div>
+        </div>
+        <div class="fac-item">
+          <i class="fa-solid fa-capsules fac-icon"></i>
+          <div class="fac-name">Pharmacy</div>
+          <div class="fac-tag">In-House Store</div>
+        </div>
+        <div class="fac-item">
+          <i class="fa-solid fa-flask fac-icon"></i>
+          <div class="fac-name">Blood Test Lab</div>
+          <div class="fac-tag">Fast Results</div>
+        </div>
+        <div class="fac-item">
+          <i class="fa-solid fa-x-ray fac-icon"></i>
+          <div class="fac-name">X-Ray Imaging</div>
+          <div class="fac-tag">Digital Radiology</div>
+        </div>
+        <div class="fac-item">
+          <i class="fa-solid fa-wave-square fac-icon"></i>
+          <div class="fac-name">Scan Services</div>
+          <div class="fac-tag">Ultrasound &amp; More</div>
+        </div>
+        <div class="fac-item">
+          <i class="fa-solid fa-ambulance fac-icon"></i>
+          <div class="fac-name">Ambulance</div>
+          <div class="fac-tag">24/7 Transport</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── REVIEWS ──────────────────────────────────── -->
+  <section id="reviews">
+    <div class="container">
+      <div class="row mb-5">
+        <div class="col-lg-6 reveal">
+          <div class="section-label">Patient Reviews</div>
+          <h2 class="section-title">What Patients <em>Say</em></h2>
+          <div class="divider-line"></div>
+          <p class="section-desc">Honest feedback from real patients who have trusted us with their care.</p>
+        </div>
+      </div>
+      <div class="rating-bar-wrap reveal">
+        <div class="rating-card">
+          <div class="rating-num">3.1<sub>/5</sub></div>
+          <div class="rating-meta">
+            <div class="source"><i class="fab fa-google me-1"></i> Google Reviews</div>
+            <div class="stars">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              <i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i>
+            </div>
+            <div class="count">Based on Google ratings</div>
+          </div>
+        </div>
+        <div class="rating-card">
+          <div class="rating-num">3.8<sub>/5</sub></div>
+          <div class="rating-meta">
+            <div class="source"><i class="fa-solid fa-phone-volume me-1"></i> JustDial</div>
+            <div class="stars">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star-half-stroke"></i><i class="fa-regular fa-star"></i>
+            </div>
+            <div class="count">JustDial verified rating</div>
+          </div>
+        </div>
+      </div>
+      <div class="reviews-grid stagger">
+        <div class="review-card">
+          <div class="review-quote"><i class="fa-solid fa-quote-left"></i></div>
+          <p class="review-text">Dr. Hema Latha is an exceptional gynecologist. She was very thorough, attentive, and
+            made me feel comfortable throughout my pregnancy. The staff was also very supportive.</p>
+          <div class="review-author">
+            <div class="review-avatar">S</div>
+            <div class="review-author-info">
+              <div class="name">Sudha R.</div>
+              <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                  class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+            </div>
+          </div>
+        </div>
+        <div class="review-card">
+          <div class="review-quote"><i class="fa-solid fa-quote-left"></i></div>
+          <p class="review-text">Good hospital with 24/7 availability. The emergency care team responded quickly. The
+            lab results were accurate and delivered on time. Would recommend for local care.</p>
+          <div class="review-author">
+            <div class="review-avatar">R</div>
+            <div class="review-author-info">
+              <div class="name">Ravi K.</div>
+              <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                  class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i></div>
+            </div>
+          </div>
+        </div>
+        <div class="review-card">
+          <div class="review-quote"><i class="fa-solid fa-quote-left"></i></div>
+          <p class="review-text">My delivery was handled beautifully here. The doctors and nurses were very caring and
+            professional. The pharmacy is convenient, and the facility is clean and well-maintained.</p>
+          <div class="review-author">
+            <div class="review-avatar">P</div>
+            <div class="review-author-info">
+              <div class="name">Priya M.</div>
+              <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                  class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── CONTACT ──────────────────────────────────── -->
+  <section id="contact">
+    <div class="container">
+      <div class="row mb-5">
+        <div class="col-lg-6 reveal">
+          <div class="section-label">Contact Us</div>
+          <h2 class="section-title">We're Always <em>Here for You</em></h2>
+          <div class="divider-line"></div>
+        </div>
+      </div>
+      <div class="row g-4">
+        <div class="col-lg-5 reveal-left">
+          <div class="contact-info-card">
+            <div class="ci-icon"><i class="fa-solid fa-location-dot"></i></div>
+            <div>
+              <div class="ci-label">Address</div>
+              <div class="ci-value">114, 100 Feet Ring Road, Ittamadu<br>Banashankari 3rd Stage<br>Bengaluru, Karnataka
+                560085</div>
+            </div>
+          </div>
+          <div class="contact-info-card">
+            <div class="ci-icon"><i class="fa-solid fa-phone"></i></div>
+            <div>
+              <div class="ci-label">Phone</div>
+              <div class="ci-value">
+                <a href="tel:08026693033">080 2669 3033</a><br>
+                <a href="tel:08026693032">080 2669 3032</a>
+              </div>
+            </div>
+          </div>
+          <div class="contact-info-card">
+            <div class="ci-icon"><i class="fa-solid fa-clock"></i></div>
+            <div>
+              <div class="ci-label">Working Hours</div>
+              <div class="ci-value">Open 24 Hours, 7 Days a Week<br><span
+                  style="color:var(--teal);font-size:.8rem;">Emergency care always available</span></div>
+            </div>
+          </div>
+          <div class="map-wrap">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.9024!2d77.5455!3d12.9278!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae15b983e47fab%3A0x6bdfa2e4e0e5a56e!2sUdhbhava%20Hospital!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+              width="100%" height="220" style="border:0;display:block;" allowfullscreen="" loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade" title="Udhbhava Hospital Location">
+            </iframe>
+          </div>
+        </div>
+        <div class="col-lg-7 reveal-right">
+          <div class="contact-form">
+            <h4>Send Us a Message</h4>
+            <div id="formFields">
+              <div class="mb-3">
+                <label class="form-label-custom">Your Name</label>
+                <input type="text" class="form-control form-ctrl" id="cfName" placeholder="Ramesh Kumar" required>
+              </div>
+              <div class="mb-3">
+                <label class="form-label-custom">Phone Number</label>
+                <input type="tel" class="form-control form-ctrl" id="cfPhone" placeholder="+91 98765 43210" required>
+              </div>
+              <div class="mb-4">
+                <label class="form-label-custom">Message</label>
+                <textarea class="form-control form-ctrl" id="cfMsg" rows="5" placeholder="How can we help you today?"
+                  required></textarea>
+              </div>
+              <button type="button" class="btn-submit" onclick="submitForm()">
+                <i class="fa-solid fa-paper-plane me-2"></i> Send Message
+              </button>
+            </div>
+            <div class="form-success" id="formSuccess">
+              <i class="fa-solid fa-circle-check" style="font-size:2.5rem;display:block;margin-bottom:12px;"></i>
+              <strong>Message received!</strong><br>
+              <span style="color:rgba(255,255,255,.5);font-size:.85rem;">We'll get back to you shortly.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── FOOTER ───────────────────────────────────── -->
+  <footer>
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-4 col-md-6">
+          <div class="footer-brand">
+            <div class="name">Udhbhava Hospital</div>
+            <div class="kn">ಉದ್ಭವ ಆಸ್ಪತ್ರೆ</div>
+            <p class="tagline">A trusted private multispeciality hospital providing compassionate 24/7 care in
+              Banashankari, Bengaluru.</p>
+          </div>
+          <div style="margin-top:20px;display:flex;gap:10px;">
+            <a href="tel:08026693033"
+              style="width:36px;height:36px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:50%;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.5);font-size:.8rem;text-decoration:none;transition:all .25s ease;"
+              onmouseover="this.style.background='rgba(0,172,193,.2)';this.style.color='#00acc1'"
+              onmouseout="this.style.background='rgba(255,255,255,.06)';this.style.color='rgba(255,255,255,.5)'"><i
+                class="fa-solid fa-phone"></i></a>
+            <a href="#contact"
+              style="width:36px;height:36px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:50%;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.5);font-size:.8rem;text-decoration:none;transition:all .25s ease;"
+              onmouseover="this.style.background='rgba(0,172,193,.2)';this.style.color='#00acc1'"
+              onmouseout="this.style.background='rgba(255,255,255,.06)';this.style.color='rgba(255,255,255,.5)'"><i
+                class="fa-solid fa-envelope"></i></a>
+            <a href="#about"
+              style="width:36px;height:36px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:50%;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.5);font-size:.8rem;text-decoration:none;transition:all .25s ease;"
+              onmouseover="this.style.background='rgba(0,172,193,.2)';this.style.color='#00acc1'"
+              onmouseout="this.style.background='rgba(255,255,255,.06)';this.style.color='rgba(255,255,255,.5)'"><i
+                class="fa-solid fa-hospital"></i></a>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-6 col-6">
+          <div class="footer-col-title">Quick Links</div>
+          <ul class="footer-links">
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#doctors">Our Doctor</a></li>
+            <li><a href="#facilities">Facilities</a></li>
+            <li><a href="#reviews">Reviews</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-6 col-6">
+          <div class="footer-col-title">Services</div>
+          <ul class="footer-links">
+            <li><a href="#services">Obstetrics &amp; Gynecology</a></li>
+            <li><a href="#services">Maternity Care</a></li>
+            <li><a href="#services">Pediatrics</a></li>
+            <li><a href="#services">General Medicine</a></li>
+            <li><a href="#services">Emergency Care</a></li>
+            <li><a href="#services">Lab &amp; Diagnostics</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="footer-col-title">Contact</div>
+          <div class="footer-contact-item">
+            <i class="fa-solid fa-location-dot"></i>
+            <span>114, 100 Feet Ring Road, Ittamadu, Banashankari 3rd Stage, Bengaluru 560085</span>
+          </div>
+          <div class="footer-contact-item">
+            <i class="fa-solid fa-phone"></i>
+            <span><a href="tel:08026693033" style="color:var(--teal);text-decoration:none;">080 2669 3033</a><br><a
+                href="tel:08026693032" style="color:var(--teal);text-decoration:none;">080 2669 3032</a></span>
+          </div>
+          <div class="footer-contact-item">
+            <i class="fa-solid fa-clock"></i>
+            <span>Open 24 Hours, 7 Days</span>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 Udhbhava Hospital. All rights reserved.</p>
+        <div class="footer-badge"><i class="fa-solid fa-shield-heart me-1"></i> 24/7 Healthcare</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to top -->
+  <button id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">
+    <i class="fa-solid fa-chevron-up"></i>
+  </button>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    /* ─── NAVBAR SCROLL ─────────────────────────────── */
+    const nav = document.getElementById('mainNav');
+    const btt = document.getElementById('btt');
+    let ticking = false;
+    window.addEventListener('scroll', () => {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          const y = window.scrollY;
+          nav.classList.toggle('scrolled', y > 60);
+          btt.classList.toggle('show', y > 400);
+          ticking = false;
+        });
+        ticking = true;
+      }
+    });
+
+    /* ─── MOBILE MENU ───────────────────────────────── */
+    const ham = document.getElementById('hamburger');
+    const mob = document.getElementById('mobileMenu');
+    let mobOpen = false;
+    ham.addEventListener('click', () => {
+      mobOpen = !mobOpen;
+      mob.style.display = mobOpen ? 'block' : 'none';
+      ham.querySelectorAll('span').forEach((s, i) => {
+        if (mobOpen) {
+          if (i === 0) { s.style.transform = 'rotate(45deg) translate(5px,5px)'; }
+          if (i === 1) { s.style.opacity = '0'; }
+          if (i === 2) { s.style.transform = 'rotate(-45deg) translate(5px,-5px)'; }
+        } else {
+          s.style.transform = ''; s.style.opacity = '';
+        }
+      });
+    });
+    function closeMobile() {
+      mobOpen = false; mob.style.display = 'none';
+      ham.querySelectorAll('span').forEach(s => { s.style.transform = ''; s.style.opacity = ''; });
+    }
+
+    /* ─── SCROLL REVEAL ─────────────────────────────── */
+    const revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .stagger');
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    revealEls.forEach(el => io.observe(el));
+
+    /* ─── 3D TILT ON SERVICE CARDS ───────────────────── */
+    document.querySelectorAll('.svc-card').forEach(card => {
+      card.addEventListener('mousemove', e => {
+        const r = card.getBoundingClientRect();
+        const x = (e.clientX - r.left) / r.width - 0.5;
+        const y = (e.clientY - r.top) / r.height - 0.5;
+        card.style.transform = `translateY(-8px) rotateX(${-y * 10}deg) rotateY(${x * 10}deg)`;
+      });
+      card.addEventListener('mouseleave', () => { card.style.transform = ''; });
+    });
+
+    /* ─── CONTACT FORM ──────────────────────────────── */
+    function submitForm() {
+      const n = document.getElementById('cfName').value.trim();
+      const p = document.getElementById('cfPhone').value.trim();
+      const m = document.getElementById('cfMsg').value.trim();
+      if (!n || !p || !m) { alert('Please fill in all fields.'); return; }
+      document.getElementById('formFields').style.display = 'none';
+      document.getElementById('formSuccess').style.display = 'block';
+    }
+
+    /* ─── PARALLAX HERO ─────────────────────────────── */
+    const heroBg = document.querySelector('.hero-bg-pattern');
+    window.addEventListener('scroll', () => {
+      const y = window.scrollY;
+      if (y < window.innerHeight && heroBg) {
+        heroBg.style.transform = `scale(1.04) translateY(${y * 0.15}px)`;
+      }
+    }, { passive: true });
+  </script>
+</body>
+
+</html>
